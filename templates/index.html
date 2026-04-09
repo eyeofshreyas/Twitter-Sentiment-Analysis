@@ -12,11 +12,11 @@
             background: #0f1923;
             color: #e7e9ea;
             min-height: 100vh;
-            padding: 60px 20px;
+            padding: 48px 20px 40px;
         }
 
         h1 {
-            font-size: 28px;
+            font-size: 26px;
             font-weight: 700;
             color: #fff;
             margin-bottom: 4px;
@@ -25,7 +25,7 @@
         .subtitle {
             font-size: 14px;
             color: #71767b;
-            margin-bottom: 36px;
+            margin-bottom: 28px;
         }
 
         .container {
@@ -42,11 +42,12 @@
             font-size: 16px;
             font-family: inherit;
             line-height: 1.6;
-            padding: 16px;
+            padding: 14px;
             resize: none;
-            height: 120px;
+            height: 130px;
             outline: none;
             transition: border-color 0.15s;
+            -webkit-appearance: none;
         }
 
         textarea:focus {
@@ -62,11 +63,13 @@
             justify-content: space-between;
             align-items: center;
             margin-top: 10px;
+            gap: 12px;
         }
 
         .char {
             font-size: 13px;
             color: #71767b;
+            flex-shrink: 0;
         }
 
         .char.warn { color: #f4a100; }
@@ -77,24 +80,41 @@
             color: #fff;
             border: none;
             border-radius: 20px;
-            padding: 8px 20px;
-            font-size: 14px;
+            padding: 10px 24px;
+            font-size: 15px;
             font-weight: 600;
             cursor: pointer;
             transition: background 0.15s;
+            min-height: 44px;
+            touch-action: manipulation;
+            flex-shrink: 0;
         }
 
         button:hover { background: #1a8cd8; }
+        button:active { background: #1577b5; }
         button:disabled { opacity: 0.45; cursor: default; }
+
+        @media (max-width: 480px) {
+            body { padding: 28px 16px 32px; }
+            h1 { font-size: 22px; }
+            .row { flex-direction: column-reverse; align-items: stretch; }
+            button { width: 100%; text-align: center; border-radius: 10px; font-size: 16px; }
+            .char { text-align: right; }
+        }
 
         /* result */
         .result-box {
-            margin-top: 28px;
+            margin-top: 24px;
             background: #1e2d3d;
             border: 1px solid #2d3f50;
             border-radius: 8px;
             padding: 20px;
             animation: up 0.2s ease;
+        }
+
+        @media (max-width: 480px) {
+            .result-box { padding: 16px; }
+            .verdict { font-size: 20px; }
         }
 
         @keyframes up {
