@@ -1,0 +1,13 @@
+# Large data files
+twitter_data.csv
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+venv/
+.env
+
+# IDE
+.vscode/
+.idea/
